@@ -1,0 +1,6 @@
+/* Modo compacto: menos relleno y letra más pequeña */
+:root{--sp:.75!important}
+body{font-size:14px}
+.card{padding:10px!important}
+.btn{min-height:32px!important;padding:4px 10px!important}
+.tbl td,.tbl th{padding-top:6px!important;padding-bottom:6px!important}

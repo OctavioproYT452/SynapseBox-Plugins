@@ -1,0 +1,16 @@
+{
+  "id": "registro-de-accesos",
+  "title": "Registro de accesos",
+  "version": "1.0.0",
+  "category": "Seguridad",
+  "author": "OctavioproYT452",
+  "description": "Guarda quién hace cambios (POST/PUT/DELETE) y lo muestra solo a administradores.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "files": [
+    "server.js"
+  ]
+}

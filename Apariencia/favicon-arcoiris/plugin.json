@@ -1,0 +1,17 @@
+{
+  "id": "favicon-arcoiris",
+  "title": "Favicon arcoíris",
+  "version": "1.0.0",
+  "category": "Apariencia",
+  "author": "OctavioproYT452",
+  "description": "Reemplaza el icono de la pestaña por uno de colores usando serveFile.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "files": [
+    "server.js",
+    "icon.svg"
+  ]
+}

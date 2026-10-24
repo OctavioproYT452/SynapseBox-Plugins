@@ -1,0 +1,16 @@
+{
+  "id": "modo-compacto",
+  "title": "Modo compacto",
+  "version": "1.0.0",
+  "category": "Apariencia",
+  "author": "OctavioproYT452",
+  "description": "Reduce espacios y tamaños para ver más archivos en pantalla.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "style": "style.css",
+  "files": [
+    "style.css"
+  ]
+}
