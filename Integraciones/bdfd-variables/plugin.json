@@ -1,0 +1,20 @@
+{
+  "id": "bdfd-variables",
+  "title": "Variables BDFD",
+  "version": "1.0.0",
+  "category": "Integraciones",
+  "author": "OctavioproYT452",
+  "description": "Guarda, lee, suma, elimina y recupera variables de tu bot de BDFD (usuario, servidor, canal, miembro, bot o global) en tu almacenamiento, con ID y clave del perfil. Responde en JSON y se bloquea al llenarse la cuota.",
+  "images": [
+    "images/imagen-1.svg",
+    "images/imagen-2.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js",
+    "README.md"
+  ]
+}

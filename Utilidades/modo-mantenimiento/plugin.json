@@ -1,0 +1,19 @@
+{
+  "id": "modo-mantenimiento",
+  "title": "Modo mantenimiento",
+  "version": "1.0.0",
+  "category": "Utilidades",
+  "author": "OctavioproYT452",
+  "description": "Pone el sitio en mantenimiento para los usuarios (503 con mensaje propio) mientras los administradores siguen trabajando.",
+  "images": [
+    "images/imagen-1.svg",
+    "images/imagen-2.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

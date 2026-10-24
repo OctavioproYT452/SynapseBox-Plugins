@@ -1,0 +1,17 @@
+{
+  "id": "amoled-negro",
+  "title": "AMOLED negro",
+  "version": "1.0.0",
+  "category": "Apariencia",
+  "author": "OctavioproYT452",
+  "description": "Fondo negro puro para pantallas OLED, por encima del tema que tengas elegido.",
+  "images": [
+    "images/imagen-1.svg",
+    "images/imagen-2.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "style": "style.css",
+  "files": [
+    "style.css"
+  ]
+}
