@@ -1,6 +1,6 @@
 // Variables para BDFD (Bot Designer for Discord) guardadas en el almacenamiento del usuario.
 // API: /api/bdfd/<ID_USUARIO>/<acción>  ·  clave en la cabecera x-api-key (o ?key=)
-// Acciones: set · get · add · delete · recover · purge · list · info
+// Acciones: ping · set · get · add · delete · recover · purge · list · info
 const fsp = require("fs").promises, path = require("path"), crypto = require("crypto");
 
 module.exports = api => {
@@ -68,6 +68,7 @@ module.exports = api => {
   const out = (action, t, rec, extra) => ({ ok: true, action, scope: t.scope, id: t.id, bot: t.bot, name: t.name, ...extra, ...(rec ? { value: rec.value, created_at: rec.created_at, updated_at: rec.updated_at } : {}) });
 
   const actions = {
+    async ping(u) { return { ok: true, action: "ping", message: "Conexión correcta: ID y clave válidos" }; },
     async set(u, p) {
       const t = target(u, p), f = needName(t), value = str(p.value);
       if (Buffer.byteLength(value) > MAX_VALUE) throw fail("value_too_large", `El valor supera ${MAX_VALUE} bytes`, 413);
@@ -120,12 +121,14 @@ module.exports = api => {
       let es = []; try { es = await fsp.readdir(t.dir, { withFileTypes: true }); } catch { /* sin variables todavía */ }
       const rows = [];
       for (const e of es) if (e.isFile() && e.name.endsWith(".json")) { const st = await fsp.stat(path.join(t.dir, e.name)); rows.push({ name: dec(e.name), size: st.size, updated_at: st.mtimeMs | 0 }); }
+      const pre = p.prefix ? String(p.prefix) : "";
       rows.sort((a, b) => a.name.localeCompare(b.name));
+      if (pre) for (let i = rows.length - 1; i >= 0; i--) if (!rows[i].name.startsWith(pre)) rows.splice(i, 1);
       return { ok: true, action: "list", scope: t.scope, id: t.id, bot: t.bot, trash: inTrash, count: rows.length, truncated: rows.length > MAX_LIST, variables: rows.slice(0, MAX_LIST) };
     },
     async info(u) {
       const used = await usage(u, true), lim = limitB(u), vb = await dirSize(path.join(base(u), ROOT)), tb = await dirSize(path.join(base(u), ROOT, TRASH));
-      return { ok: true, action: "info", storage: { used, limit: lim === Infinity ? null : lim, free: lim === Infinity ? null : Math.max(0, lim - used), full: lim !== Infinity && used >= lim }, variables_bytes: vb - tb, trash_bytes: tb };
+      return { ok: true, action: "info", used, limit: lim === Infinity ? null : lim, free: lim === Infinity ? null : Math.max(0, lim - used), full: lim !== Infinity && used >= lim, storage: { used, limit: lim === Infinity ? null : lim, free: lim === Infinity ? null : Math.max(0, lim - used), full: lim !== Infinity && used >= lim }, variables_bytes: vb - tb, trash_bytes: tb };
     },
   };
 
