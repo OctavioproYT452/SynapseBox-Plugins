@@ -1,0 +1,18 @@
+{
+  "id": "cierre-por-inactividad",
+  "title": "Cierre por inactividad",
+  "version": "1.0.0",
+  "category": "Seguridad",
+  "author": "OctavioproYT452",
+  "description": "Cierra la sesión de quien se deja el navegador abierto, con cuenta atrás y botón para seguir conectado. Ajustes en Administración → Extensiones.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

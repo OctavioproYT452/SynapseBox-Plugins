@@ -1,0 +1,18 @@
+{
+  "id": "limite-de-peticiones",
+  "title": "Límite de peticiones",
+  "version": "1.0.0",
+  "category": "Seguridad",
+  "author": "OctavioproYT452",
+  "description": "Frena el abuso y la fuerza bruta: limita las peticiones por IP y los intentos de inicio de sesión. Contadores y ajustes en Administración → Extensiones.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

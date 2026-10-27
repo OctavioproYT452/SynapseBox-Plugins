@@ -1,10 +1,10 @@
 {
   "id": "hola-plugin",
   "title": "Hola plugin",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "Desarrollo",
   "author": "OctavioproYT452",
-  "description": "Plantilla mínima: una ruta en el servidor y un aviso en el cliente. Empieza por aquí.",
+  "description": "Plantilla mínima: una ruta en el servidor, un aviso en el cliente y una sección en Administración → Extensiones. Empieza por aquí.",
   "images": [
     "images/imagen-1.svg"
   ],

@@ -1,10 +1,10 @@
 {
   "id": "bloqueo-por-ip",
   "title": "Bloqueo por IP",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "Seguridad",
   "author": "OctavioproYT452",
-  "description": "Bloquea direcciones IP (exactas o con comodín) desde un botón en el panel de administración. Nunca bloquea el acceso local ni tu propia IP.",
+  "description": "Bloquea direcciones IP (exactas o con comodín) con lista de permitidas y contador de intentos bloqueados. Se gestiona en Administración → Extensiones. Nunca bloquea el acceso local ni tu propia IP.",
   "images": [
     "images/imagen-1.svg",
     "images/imagen-2.svg"

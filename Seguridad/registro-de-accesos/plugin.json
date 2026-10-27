@@ -1,16 +1,18 @@
 {
   "id": "registro-de-accesos",
   "title": "Registro de accesos",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "Seguridad",
   "author": "OctavioproYT452",
-  "description": "Guarda quién hace cambios (POST/PUT/DELETE) y lo muestra solo a administradores.",
+  "description": "Registra quién modifica qué y desde qué IP. Tabla con búsqueda y filtros, exportación a CSV y ajustes, en Administración → Extensiones.",
   "images": [
     "images/imagen-1.svg"
   ],
   "image": "images/imagen-1.svg",
   "server": "server.js",
   "files": [
-    "server.js"
-  ]
+    "server.js",
+    "client.js"
+  ],
+  "client": "client.js"
 }

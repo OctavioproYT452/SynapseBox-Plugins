@@ -1,0 +1,18 @@
+{
+  "id": "copias-de-seguridad",
+  "title": "Copias de seguridad",
+  "version": "1.0.0",
+  "category": "Utilidades",
+  "author": "OctavioproYT452",
+  "description": "Copias automáticas y manuales de la base de datos con rotación, descarga y borrado desde Administración → Extensiones.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

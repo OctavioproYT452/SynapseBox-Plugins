@@ -1,10 +1,10 @@
 {
   "id": "health-check",
   "title": "Health check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "Utilidades",
   "author": "OctavioproYT452",
-  "description": "Añade /healthz para monitorizar SynapseBox: estado de la base de datos, tiempo activo y versión (más datos si eres administrador).",
+  "description": "Añade /healthz para monitorizar SynapseBox y un panel de salud en vivo en Administración → Extensiones (base de datos, memoria, tiempo activo, versión).",
   "images": [
     "images/imagen-1.svg",
     "images/imagen-2.svg"
@@ -12,6 +12,8 @@
   "image": "images/imagen-1.svg",
   "server": "server.js",
   "files": [
-    "server.js"
-  ]
+    "server.js",
+    "client.js"
+  ],
+  "client": "client.js"
 }

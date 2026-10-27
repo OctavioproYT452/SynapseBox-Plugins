@@ -1,16 +1,19 @@
 {
   "id": "reloj-en-panel",
   "title": "Reloj en el panel",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "category": "Utilidades",
   "author": "OctavioproYT452",
-  "description": "Muestra un reloj flotante en la esquina de todas las páginas.",
+  "description": "Reloj flotante con 8 diseños (píldora, minimalista, neón, LCD, vidrio, terminal, analógico y flip). Se configura en Administración → Extensiones y no tapa botones.",
   "images": [
-    "images/imagen-1.svg"
+    "images/imagen-1.svg",
+    "images/imagen-2.svg"
   ],
   "image": "images/imagen-1.svg",
   "client": "client.js",
   "files": [
+    "server.js",
     "client.js"
-  ]
+  ],
+  "server": "server.js"
 }

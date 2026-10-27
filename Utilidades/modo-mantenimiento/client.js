@@ -1,15 +1,23 @@
-// Botón flotante solo en las páginas de administración
-SynapseBox.ready(async () => {
-  if (!SynapseBox.page.startsWith("admin")) return;
-  try { const s = await SynapseBox.session(); if (!s.admin) return; } catch { return; }
-  const b = document.createElement("button");
-  b.className = "btn ghost"; b.style.cssText = "position:fixed;left:12px;bottom:56px;z-index:50";
-  const paint = s => b.textContent = "Mantenimiento: " + (s.on ? "ACTIVO" : "apagado");
-  paint(await SynapseBox.api("/api/plugins/modo-mantenimiento/state"));
-  b.onclick = async () => {
-    const s = await SynapseBox.api("/api/plugins/modo-mantenimiento/state");
-    dialog("Modo mantenimiento", `<label class="fld"><span>Mensaje para los usuarios</span><input class="input" id="mm" value="${esc(s.msg)}"></label><label class="chk"><input type="checkbox" id="mo" ${s.on ? "checked" : ""}><span><b>Activar</b><small>Los administradores siguen entrando con normalidad.</small></span></label>`,
-      async d => { paint(await SynapseBox.api("/api/plugins/modo-mantenimiento/state", { on: d.querySelector("#mo").checked, msg: d.querySelector("#mm").value })); toast("Guardado"); }, "Guardar");
-  };
-  document.body.append(b);
+// Sección «Mantenimiento» en Administración → Extensiones.
+SynapseBox.admin({
+  id: "modo-mantenimiento", title: "Mantenimiento",
+  async render(el, h) {
+    const load = async () => {
+      const s = await h.api("/api/plugins/modo-mantenimiento/state");
+      const local = s.until ? new Date(s.until - new Date(s.until).getTimezoneOffset() * 6e4).toISOString().slice(0, 16) : "";
+      el.innerHTML = h.head("Modo mantenimiento", "Los usuarios ven un aviso 503; los administradores siguen entrando con normalidad.") + `
+      <div class="card" style="display:grid;gap:12px;max-width:640px">
+        <p>Estado: <b class="badge ${s.on ? "bad" : ""}">${s.on ? "ACTIVO" : "apagado"}</b>${s.on && s.until ? ` <small class="muted">· termina ${new Date(s.until).toLocaleString()}</small>` : ""}</p>
+        ${h.fld("Mensaje para los usuarios", "", `<input class="input" id="mm-msg" maxlength="300" value="${h.esc(s.msg)}">`)}
+        ${h.fld("Desactivar automáticamente el…", "Opcional. Si lo dejas vacío, sigue activo hasta que lo apagues.", `<input class="input" type="datetime-local" id="mm-until" value="${local}">`)}
+        ${h.chk("mm-on", "Activar mantenimiento", "", s.on)}
+        <div class="row"><button class="btn" id="mm-save">Guardar</button></div>
+      </div>`;
+      el.querySelector("#mm-save").onclick = async () => {
+        const u = el.querySelector("#mm-until").value;
+        try { await h.api("/api/plugins/modo-mantenimiento/state", { on: el.querySelector("#mm-on").checked, msg: el.querySelector("#mm-msg").value, until: u ? new Date(u).getTime() : 0 }); h.toast("Guardado"); load(); } catch (e) { h.toast(e.message, 1); }
+      };
+    };
+    await load();
+  },
 });

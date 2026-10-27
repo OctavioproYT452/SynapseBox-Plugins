@@ -1,0 +1,18 @@
+{
+  "id": "notas-del-admin",
+  "title": "Notas del administrador",
+  "version": "1.0.0",
+  "category": "Utilidades",
+  "author": "OctavioproYT452",
+  "description": "Bloc de notas compartido entre administradores con guardado automático, en Administración → Extensiones.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

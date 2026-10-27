@@ -27,18 +27,11 @@ SynapseBox.ready(() => {
         <p><b>Estado:</b> ${s.enabled ? "Activado" : "Desactivado"}</p>
         ${s.enabled ? `<label class="fld"><span>Tu ID</span><input class="input" readonly value="${esc(s.uuid)}"></label>` : ""}
         ${key ? `<div class="card" style="border-color:var(--warn)"><b>Tu clave (cópiala ahora, no se vuelve a mostrar):</b><input class="input" readonly value="${esc(key)}" onfocus="this.select()"></div>` : ""}
-        ${s.enabled ? `<p class="muted">Copia estos ejemplos a BDFD y cambia <b>TU_CLAVE</b> por tu clave:</p>
-          ${[["Probar la conexión", `$httpAddHeader[x-api-key;TU_CLAVE]\n$httpGet[${o}/api/bdfd/${s.uuid}/ping]\n$httpResult[message]`],
-             ["Guardar monedas de un usuario", `$httpAddHeader[x-api-key;TU_CLAVE]\n$httpGet[${o}/api/bdfd/${s.uuid}/set?scope=user&id=$authorID&name=monedas&value=100]`],
-             ["Leer monedas (0 si no existe)", `$httpAddHeader[x-api-key;TU_CLAVE]\n$httpGet[${o}/api/bdfd/${s.uuid}/get?scope=user&id=$authorID&name=monedas&default=0]\n$httpResult[value]`],
-             ["Sumar 10 monedas", `$httpAddHeader[x-api-key;TU_CLAVE]\n$httpGet[${o}/api/bdfd/${s.uuid}/add?scope=user&id=$authorID&name=monedas&value=10]\n$httpResult[value]`]]
-            .map(([t, c]) => `<details><summary>${esc(t)}</summary><pre style="white-space:pre-wrap;overflow:auto;font-size:12px">${esc(c)}</pre><button type="button" class="btn sm ghost" data-copy="${esc(c)}">Copiar</button></details>`).join("")}
-          <small class="muted">Guía completa con más ejemplos en el README del plugin. Acciones: ping, set, get, add, delete, recover, purge, list, info.</small>` : ""}
+        ${s.enabled ? `<pre style="white-space:pre-wrap;overflow:auto;font-size:12px">$httpAddHeader[x-api-key;TU_CLAVE]\n$httpGet[${esc(o)}/api/bdfd/${esc(s.uuid)}/get?scope=user&id=$authorID&name=monedas&default=0]\n$httpResult[value]</pre><small class="muted">Acciones: set, get, add, delete, recover, purge, list, info · scope: user, server, channel, member, bot, global.</small>` : ""}
         <div class="row" style="margin-top:12px;gap:8px">
           ${s.enabled ? `<button class="btn ghost" id="bd-r">Regenerar clave</button><button class="btn ghost dng" id="bd-o">Desactivar</button>` : `<button class="btn" id="bd-a">Activar y generar clave</button>`}
         </div>`;
       const act = (id, body) => { const b = box.querySelector(id); if (b) b.onclick = async () => { try { const r = await SynapseBox.api("/api/plugins/bdfd-variables/enable", body); render(r.key); } catch (x) { toast(x.message, 1); } }; };
-      box.querySelectorAll("[data-copy]").forEach(b => b.onclick = () => navigator.clipboard.writeText(b.dataset.copy).then(() => toast("Copiado")));
       act("#bd-a", { enabled: true }); act("#bd-r", { enabled: true, regenerate: true }); act("#bd-o", { enabled: false });
     };
     await render();

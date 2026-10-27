@@ -1,16 +1,18 @@
 {
   "id": "atajos-de-teclado",
   "title": "Atajos de teclado",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "category": "Utilidades",
   "author": "OctavioproYT452",
-  "description": "Alt+H panel, Alt+A administración, Alt+T temas.",
+  "description": "Atajos de teclado configurables (por defecto Alt+H panel, Alt+A administración, Alt+T temas). Edítalos en Administración → Extensiones.",
   "images": [
     "images/imagen-1.svg"
   ],
   "image": "images/imagen-1.svg",
   "client": "client.js",
   "files": [
+    "server.js",
     "client.js"
-  ]
+  ],
+  "server": "server.js"
 }

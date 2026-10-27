@@ -1,0 +1,18 @@
+{
+  "id": "avisos-por-webhook",
+  "title": "Avisos por webhook",
+  "version": "1.0.0",
+  "category": "Integraciones",
+  "author": "OctavioproYT452",
+  "description": "Recibe en Discord (o JSON genérico) avisos de inicios de sesión fallidos, acciones de administración y arranques del servidor.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}
