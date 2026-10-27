@@ -1,0 +1,18 @@
+{
+  "id": "limpieza-de-temporales",
+  "title": "Limpieza de temporales",
+  "version": "1.0.0",
+  "category": "Utilidades",
+  "author": "OctavioproYT452",
+  "description": "Borra automáticamente lo antiguo de la carpeta temporal (subidas a medias, restos) y muestra cuánto ocupa.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

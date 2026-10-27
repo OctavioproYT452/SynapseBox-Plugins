@@ -1,0 +1,18 @@
+{
+  "id": "redirecciones",
+  "title": "Redirecciones",
+  "version": "1.0.0",
+  "category": "Utilidades",
+  "author": "OctavioproYT452",
+  "description": "Haz que una dirección de tu SynapseBox lleve a otra (enlaces cortos, páginas movidas). Se gestiona en Administración → Extensiones.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

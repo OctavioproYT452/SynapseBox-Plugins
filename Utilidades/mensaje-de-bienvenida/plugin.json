@@ -1,0 +1,18 @@
+{
+  "id": "mensaje-de-bienvenida",
+  "title": "Mensaje de bienvenida",
+  "version": "1.0.0",
+  "category": "Utilidades",
+  "author": "OctavioproYT452",
+  "description": "Ventana de bienvenida que cada persona ve una sola vez al entrar al panel; el administrador puede renovarla.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

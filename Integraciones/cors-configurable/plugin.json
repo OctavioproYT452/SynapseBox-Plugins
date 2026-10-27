@@ -1,0 +1,18 @@
+{
+  "id": "cors-configurable",
+  "title": "CORS configurable",
+  "version": "1.0.0",
+  "category": "Integraciones",
+  "author": "OctavioproYT452",
+  "description": "Permite que páginas de otros dominios usen la API de SynapseBox desde el navegador, con lista de orígenes y cookies opcionales.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}

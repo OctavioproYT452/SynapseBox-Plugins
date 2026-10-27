@@ -1,0 +1,18 @@
+{
+  "id": "estadisticas-de-uso",
+  "title": "Estadísticas de uso",
+  "version": "1.0.0",
+  "category": "Utilidades",
+  "author": "OctavioproYT452",
+  "description": "Páginas vistas, llamadas a la API, errores e IP distintas por día, con gráfica y rutas más usadas, en Administración → Extensiones.",
+  "images": [
+    "images/imagen-1.svg"
+  ],
+  "image": "images/imagen-1.svg",
+  "server": "server.js",
+  "client": "client.js",
+  "files": [
+    "server.js",
+    "client.js"
+  ]
+}
